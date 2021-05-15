@@ -25,9 +25,11 @@ function App() {
           return <Hotel key={ index } hotel={ a } onClick={ onClick } />
         })}
       </div>
-
-      <Cart list={list} />
-
+      
+      <div className="cart">
+        <h1>Cart</h1>
+        <Cart list={list} />
+      </div>
     </div>
   );
 }
