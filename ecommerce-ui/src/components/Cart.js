@@ -3,13 +3,20 @@ import React, { Component } from 'react';
 class Cart extends Component {
 
     render() {
+        console.log(this.props);
         return (
             <div className="cart">
-                <h1>Cart</h1>
-                {console.log("child", this.props.dataFromParent)}
+            {this.props.list.map((a, index) => {
+                return (
+                <div id={index}>
+                    <h2>{a.title}</h2>
+                    <h3>${a.payment}</h3>
+                    <button>Remove</button>
+                </div>
+                )
+            })}
             </div>
         )
-
     }
   };
 

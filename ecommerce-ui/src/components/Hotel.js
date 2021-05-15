@@ -26,33 +26,26 @@ class Hotel extends Component {
         }).isRequired
     }
 
-    constructor(props) {
-      super(props);
-      this.state = {
-          list: [],
-      };
-    }
-
-    add(info) {
-        this.setState({
-            list: [ ...this.state.list, info]
-        }, () => {
-            console.log(this.state.list);
-        });
-    }
-
     render() {
         const { title, image, payment } = this.props.hotel;
         const info = {title: title, image: image, payment: payment.cost};
+
         return (
             <div className="box">
                 <h2>{title}</h2>
                 <img src={image} alt="" />
                 <h3>${payment.cost}</h3>
-                <button onClick={() => this.add(info)}>add</button>
+
+                <button onClick={ () => this.props.onClick(info) } >
+                    add
+                </button>
             </div>
         )
     }
 }
 
 export default Hotel;
+
+// <button onClick={ () => this.props.onClick(info) } >
+// add
+// </button>
