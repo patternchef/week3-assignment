@@ -29,13 +29,11 @@ class Hotel extends Component {
     render() {
         const { title, image, payment } = this.props.hotel;
         const info = {title: title, image: image, payment: payment.cost};
-
         return (
             <div className="box">
                 <h2>{title}</h2>
                 <img src={image} alt="" />
                 <h3>${payment.cost}</h3>
-
                 <button onClick={ () => this.props.onClick(info) } >
                     add
                 </button>
@@ -45,7 +43,3 @@ class Hotel extends Component {
 }
 
 export default Hotel;
-
-// <button onClick={ () => this.props.onClick(info) } >
-// add
-// </button>
